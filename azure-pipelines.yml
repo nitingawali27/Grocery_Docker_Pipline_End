@@ -1,13 +1,7 @@
-# Python package
-# Create and test a Python package on multiple Python versions.
-# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
-
 trigger:
 - master
 
-pool: Newpool
-
+pool: Newpool  # Your self-hosted agent pool
 
 strategy:
   matrix:
@@ -21,9 +15,14 @@ strategy:
       python.version: '3.11'
 
 steps:
-- task: UsePythonVersion@0
+- script: |
+    choco install python --version=$(python.version) -y
+  displayName: 'Install Python $(python.version) using Chocolatey'
+
+- task: UsePythonVersion@0  # Use the available version
   inputs:
     versionSpec: '$(python.version)'
+    addToPath: true
   displayName: 'Use Python $(python.version)'
 
 - script: |
