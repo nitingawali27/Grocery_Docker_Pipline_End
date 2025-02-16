@@ -1,7 +1,7 @@
 trigger:
 - master
 
-pool: Newpool  # Your self-hosted agent pool
+pool: Newpool
 
 strategy:
   matrix:
