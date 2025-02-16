@@ -6,6 +6,8 @@ Resource    ../resources/api.robot
 Resource    ../resources/keywords.robot
 Resource    ../resources/token.robot
 Resource    ../resources/variables.robot
+Resource    ../resources/payloads.robot
+
 
 *** Keywords ***
 Create New Cart
@@ -16,11 +18,7 @@ Create New Cart
     Log    Cart ID: ${CART_ID}
 
 Add Items To Cart
-    ${payload}    Create Dictionary
-    ...    productId=${PRODUCT_ID}
-    ...    quantity=${QUANTITY}
-
-    ${response}    POST    ${BASE_URL}/carts/${CART_ID}/items    json=${payload}    expected_status=201
+    ${response}    POST    ${BASE_URL}/carts/${CART_ID}/items    json=${Item_payload}    expected_status=201
     ${ITEM_ID}    Set Variable    ${response.json().get("itemId")}
     Set Global Variable    ${ITEM_ID}
     Log    Item ID: ${ITEM_ID}
@@ -30,9 +28,9 @@ Create New Order
     ...    cartId=${CART_ID}
     ...    customerName=${CUSTOMER_NAME}
     ...    comment=${COMMENT}
+    Log    payload: ${payload}
 
     ${headers}    Create Dictionary    Authorization=Bearer ${ACCESS_TOKEN}
-
     ${response}    POST    ${BASE_URL}/orders    json=${payload}    headers=${headers}    expected_status=201
     ${ORDER_ID}    Set Variable    ${response.json().get("orderId")}
     Should Not Be Empty    ${ORDER_ID}    Order creation failed!

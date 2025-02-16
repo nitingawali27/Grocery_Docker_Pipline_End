@@ -6,10 +6,11 @@ Resource    ../resources/api.robot
 Resource    ../resources/keywords.robot
 Resource    ../resources/token.robot
 Resource    ../resources/variables.robot
-
+Resource    ../resources/payloads.robot
 
 *** Test Cases ***
 End-to-End Grocery Store API Test
+    Create Item Payload
     Generate Random Email And Get Token
     Create New Cart
     Add Items To Cart
