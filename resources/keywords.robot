@@ -7,7 +7,6 @@ Resource    ../resources/keywords.robot
 Resource    ../resources/token.robot
 Resource    ../resources/variables.robot
 
-
 *** Keywords ***
 Create New Cart
     ${response}    POST    ${BASE_URL}/carts    expected_status=201
@@ -51,3 +50,13 @@ Delete Order
     ${headers}    Create Dictionary    Authorization=Bearer ${ACCESS_TOKEN}
     ${response}    DELETE    ${BASE_URL}/orders/${ORDER_ID}    headers=${headers}    expected_status=204
     Log    Order Deleted Successfully
+
+Check Grocery Store API Status
+    # Send the GET request to check API status
+    ${response}=    GET    ${STATUS_API}    expected_status=200
+    Log    ${response.text}  # Log the raw response text for debugging
+    # Validate response status
+    ${json_response}=    Set Variable    ${response.json()}
+    Dictionary Should Contain Key    ${json_response}    status
+    Should Be Equal As Strings    ${json_response['status']}    UP
+
