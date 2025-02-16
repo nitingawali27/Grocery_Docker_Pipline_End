@@ -16,14 +16,8 @@ strategy:
 
 steps:
 - script: |
-    choco install python --version=$(python.version) -y
-  displayName: 'Install Python $(python.version) using Chocolatey'
-
-- task: UsePythonVersion@0  # Use the available version
-  inputs:
-    versionSpec: '$(python.version)'
-    addToPath: true
-  displayName: 'Use Python $(python.version)'
+    echo "Using pre-installed Python version $(python.version) on the self-hosted agent"
+  displayName: 'Verify Python Version'
 
 - script: |
     python -m pip install --upgrade pip
@@ -32,11 +26,4 @@ steps:
 
 - script: |
     robot -d results testcases/grocery.robot  # Execute the specified Robot file
-  displayName: 'Run Robot Framework Test: grocery.robot'
-
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: 'results'  # Path to the results folder
-    artifact: 'RobotResults'  # Name for published artifact
-    publishLocation: 'pipeline'
-  displayName: 'Publish Robot Framework Test Results'
+  displayName: 'Run Robot Framework'
