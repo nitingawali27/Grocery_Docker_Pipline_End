@@ -1,408 +1,437 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.12.6 on win32)" generated="2025-02-16T15:56:17.635949" rpa="false" schemaversion="5">
-<suite id="s1" name="Grocery" source="D:\groceryproduct_automation\testcases\grocery.robot">
-<test id="s1-t1" name="End-to-End Grocery Store API Test" line="12">
+<robot generator="Robot 7.2 (Python 3.12.6 on win32)" generated="2025-02-18T14:40:02.869461" rpa="false" schemaversion="5">
+<suite id="s1" name="Grocery All" source="D:\groceryproduct_automation\testcases\grocery_all.robot">
+<test id="s1-t1" name="Create Item Payload" line="12">
 <kw name="Create Item Payload" owner="payloads">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.394573" level="INFO">${Item_payload} = {'productId': '4643', 'quantity': '10'}</msg>
+<msg time="2025-02-18T14:40:03.798908" level="INFO">${Item_payload} = {'productId': '4643', 'quantity': '10'}</msg>
 <var>${Item_payload}</var>
 <arg>productId=${PRODUCT_ID}</arg>
 <arg>quantity=${QUANTITY}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.394573" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:03.797911" elapsed="0.000997"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.394573" level="INFO">${Item_payload} = {'productId': '4643', 'quantity': '10'}</msg>
+<msg time="2025-02-18T14:40:03.798908" level="INFO">${Item_payload} = {'productId': '4643', 'quantity': '10'}</msg>
 <arg>${Item_payload}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.394573" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:03.798908" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.395584" level="INFO">Item Payload: {'productId': '4643', 'quantity': '10'}</msg>
+<msg time="2025-02-18T14:40:03.798908" level="INFO">Item Payload: {'productId': '4643', 'quantity': '10'}</msg>
 <arg>Item Payload: ${Item_payload}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.394573" elapsed="0.001011"/>
+<status status="PASS" start="2025-02-18T14:40:03.798908" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:18.393590" elapsed="0.001994"/>
+<status status="PASS" start="2025-02-18T14:40:03.796912" elapsed="0.001996"/>
 </kw>
+<doc>Execute Create Item Payload test case</doc>
+<status status="PASS" start="2025-02-18T14:40:03.795912" elapsed="0.003995"/>
+</test>
+<test id="s1-t2" name="Generate Random Email And Get Token" line="16">
 <kw name="Generate Random Email And Get Token" owner="token">
 <kw name="Generate Random String" owner="String">
-<msg time="2025-02-16T15:56:18.395584" level="INFO">${RANDOM} = QIcBifML</msg>
+<msg time="2025-02-18T14:40:03.800907" level="INFO">${RANDOM} = tXPQYIAO</msg>
 <var>${RANDOM}</var>
 <arg>8</arg>
 <arg>[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.395584" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:03.800907" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.395584" level="INFO">${CLIENT_EMAIL} = QIcBifML@yopmail.com</msg>
+<msg time="2025-02-18T14:40:03.801907" level="INFO">${CLIENT_EMAIL} = tXPQYIAO@yopmail.com</msg>
 <var>${CLIENT_EMAIL}</var>
 <arg>${RANDOM}@yopmail.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.395584" elapsed="0.000989"/>
+<status status="PASS" start="2025-02-18T14:40:03.801907" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.396573" level="INFO">Generated Email: QIcBifML@yopmail.com</msg>
+<msg time="2025-02-18T14:40:03.801907" level="INFO">Generated Email: tXPQYIAO@yopmail.com</msg>
 <arg>Generated Email: ${CLIENT_EMAIL}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.396573" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:03.801907" elapsed="0.000000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.396573" level="INFO">${payload} = {'clientName': "Postman on Nitin's computer", 'clientEmail': 'QIcBifML@yopmail.com'}</msg>
+<msg time="2025-02-18T14:40:03.801907" level="INFO">${payload} = {'clientName': "Postman on Nitin's computer", 'clientEmail': 'tXPQYIAO@yopmail.com'}</msg>
 <var>${payload}</var>
 <arg>clientName=${CLIENT_NAME}</arg>
 <arg>clientEmail=${CLIENT_EMAIL}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.396573" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:03.801907" elapsed="0.000000"/>
 </kw>
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:18.959224" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/api-clients 
+<msg time="2025-02-18T14:40:04.438539" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/api-clients 
  path_url=/api-clients 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '84', 'Content-Type': 'application/json'} 
- body=b'{"clientName": "Postman on Nitin\'s computer", "clientEmail": "QIcBifML@yopmail.com"}' 
+ body=b'{"clientName": "Postman on Nitin\'s computer", "clientEmail": "tXPQYIAO@yopmail.com"}' 
  </msg>
-<msg time="2025-02-16T15:56:18.959224" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/api-clients 
+<msg time="2025-02-18T14:40:04.438539" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/api-clients 
  status=201, reason=Created 
- headers={'Connection': 'keep-alive', 'Content-Length': '82', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"52-WsGaSZePuP6WFM5bEatSDfQt6yQ"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:18 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4749-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701578.792768,VS0,VE487'} 
- body={"accessToken":"7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1"} 
+ headers={'Connection': 'keep-alive', 'Content-Length': '82', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"52-OejNPI1qRIdM4FuXOf5oWI5eCz8"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:04 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4727-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869804.836552,VS0,VE534'} 
+ body={"accessToken":"51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767"} 
  </msg>
-<msg time="2025-02-16T15:56:18.959224" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-02-18T14:40:04.438539" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/api-clients</arg>
 <arg>json=${payload}</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.396573" elapsed="0.562651"/>
+<status status="PASS" start="2025-02-18T14:40:03.801907" elapsed="0.636632"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.960234" level="INFO">${ACCESS_TOKEN} = 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1</msg>
+<msg time="2025-02-18T14:40:04.439541" level="INFO">${ACCESS_TOKEN} = 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767</msg>
 <var>${ACCESS_TOKEN}</var>
 <arg>${response.json().get("accessToken")}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.959224" elapsed="0.001010"/>
+<status status="PASS" start="2025-02-18T14:40:04.439541" elapsed="0.000000"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.960234" level="INFO">Length is 64.</msg>
+<msg time="2025-02-18T14:40:04.439541" level="INFO">Length is 64.</msg>
 <arg>${ACCESS_TOKEN}</arg>
 <arg>Access token retrieval failed!</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.960234" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.439541" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.960234" level="INFO">${ACCESS_TOKEN} = 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1</msg>
+<msg time="2025-02-18T14:40:04.440541" level="INFO">${ACCESS_TOKEN} = 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767</msg>
 <arg>${ACCESS_TOKEN}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.960234" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.440541" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:18.961231" level="INFO">Access Token: 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1</msg>
+<msg time="2025-02-18T14:40:04.440541" level="INFO">Access Token: 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767</msg>
 <arg>Access Token: ${ACCESS_TOKEN}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.961231" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.440541" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:18.395584" elapsed="0.565647"/>
+<status status="PASS" start="2025-02-18T14:40:03.800907" elapsed="0.639634"/>
 </kw>
+<doc>Execute Generate Random Email And Get Token test case</doc>
+<status status="PASS" start="2025-02-18T14:40:03.799907" elapsed="0.641633"/>
+</test>
+<test id="s1-t3" name="Create New Cart" line="20">
 <kw name="Create New Cart" owner="keywords">
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:19.443055" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/carts 
+<msg time="2025-02-18T14:40:04.908647" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/carts 
  path_url=/carts 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-02-16T15:56:19.443055" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/carts 
+<msg time="2025-02-18T14:40:04.908647" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/carts 
  status=201, reason=Created 
- headers={'Connection': 'keep-alive', 'Content-Length': '49', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"31-FTpI0+FldA2HCu9vV8D1NiFCGPw"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:18 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4743-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701578.316028,VS0,VE452'} 
- body={"created":true,"cartId":"ArVokgkfEt1kwWEeKUvPv"} 
+ headers={'Connection': 'keep-alive', 'Content-Length': '49', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"31-G3q+l8SxvfDC0JDhNw/siN4yDfk"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:04 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4748-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869804.433902,VS0,VE427'} 
+ body={"created":true,"cartId":"bmyPRxl1W87U7C5PUXZo2"} 
  </msg>
-<msg time="2025-02-16T15:56:19.444200" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-02-18T14:40:04.909648" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/carts</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-02-16T15:56:18.962248" elapsed="0.481952"/>
+<status status="PASS" start="2025-02-18T14:40:04.443539" elapsed="0.466109"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.444200" level="INFO">${CART_ID} = ArVokgkfEt1kwWEeKUvPv</msg>
+<msg time="2025-02-18T14:40:04.910745" level="INFO">${CART_ID} = bmyPRxl1W87U7C5PUXZo2</msg>
 <var>${CART_ID}</var>
 <arg>${response.json().get("cartId")}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.444200" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.909648" elapsed="0.001097"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.444200" level="INFO">Length is 21.</msg>
+<msg time="2025-02-18T14:40:04.912123" level="INFO">Length is 21.</msg>
 <arg>${CART_ID}</arg>
 <arg>Cart creation failed!</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.444200" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.910745" elapsed="0.001378"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.445217" level="INFO">${CART_ID} = ArVokgkfEt1kwWEeKUvPv</msg>
+<msg time="2025-02-18T14:40:04.912123" level="INFO">${CART_ID} = bmyPRxl1W87U7C5PUXZo2</msg>
 <arg>${CART_ID}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.445217" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.912123" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.445217" level="INFO">Cart ID: ArVokgkfEt1kwWEeKUvPv</msg>
+<msg time="2025-02-18T14:40:04.913140" level="INFO">Cart ID: bmyPRxl1W87U7C5PUXZo2</msg>
 <arg>Cart ID: ${CART_ID}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.445217" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:04.913140" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:18.961231" elapsed="0.483986"/>
+<status status="PASS" start="2025-02-18T14:40:04.442538" elapsed="0.470602"/>
 </kw>
+<doc>Execute Create New Cart test case</doc>
+<status status="PASS" start="2025-02-18T14:40:04.442538" elapsed="0.471599"/>
+</test>
+<test id="s1-t4" name="Add Items To Cart" line="24">
 <kw name="Add Items To Cart" owner="keywords">
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:19.859085" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/carts/ArVokgkfEt1kwWEeKUvPv/items 
- path_url=/carts/ArVokgkfEt1kwWEeKUvPv/items 
+<msg time="2025-02-18T14:40:05.311826" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/carts/bmyPRxl1W87U7C5PUXZo2/items 
+ path_url=/carts/bmyPRxl1W87U7C5PUXZo2/items 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/json'} 
  body=b'{"productId": "4643", "quantity": "10"}' 
  </msg>
-<msg time="2025-02-16T15:56:19.859085" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/carts/ArVokgkfEt1kwWEeKUvPv/items 
+<msg time="2025-02-18T14:40:05.311826" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/carts/bmyPRxl1W87U7C5PUXZo2/items 
  status=201, reason=Created 
- headers={'Connection': 'keep-alive', 'Content-Length': '35', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"23-pGUmNvuXiFvYKmeo+83HpxwtEJY"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:19 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4731-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701579.800701,VS0,VE381'} 
- body={"created":true,"itemId":912369375} 
+ headers={'Connection': 'keep-alive', 'Content-Length': '35', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"23-5pgTkFFmi7s8dVfzV6OeJy+ZpeM"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:05 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4739-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869805.904980,VS0,VE361'} 
+ body={"created":true,"itemId":962615426} 
  </msg>
-<msg time="2025-02-16T15:56:19.860144" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-02-18T14:40:05.312822" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/carts/${CART_ID}/items</arg>
 <arg>json=${Item_payload}</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.445217" elapsed="0.414927"/>
+<status status="PASS" start="2025-02-18T14:40:04.916140" elapsed="0.396682"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.860144" level="INFO">${ITEM_ID} = 912369375</msg>
+<msg time="2025-02-18T14:40:05.314817" level="INFO">${ITEM_ID} = 962615426</msg>
 <var>${ITEM_ID}</var>
 <arg>${response.json().get("itemId")}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.860144" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.313816" elapsed="0.001001"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.860144" level="INFO">${ITEM_ID} = 912369375</msg>
+<msg time="2025-02-18T14:40:05.314817" level="INFO">${ITEM_ID} = 962615426</msg>
 <arg>${ITEM_ID}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.860144" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.314817" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.861154" level="INFO">Item ID: 912369375</msg>
+<msg time="2025-02-18T14:40:05.315820" level="INFO">Item ID: 962615426</msg>
 <arg>Item ID: ${ITEM_ID}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.861154" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.314817" elapsed="0.001003"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:19.445217" elapsed="0.415937"/>
+<status status="PASS" start="2025-02-18T14:40:04.915139" elapsed="0.400681"/>
 </kw>
+<doc>Execute Add Items To Cart test case</doc>
+<status status="PASS" start="2025-02-18T14:40:04.915139" elapsed="0.400681"/>
+</test>
+<test id="s1-t5" name="Create New Order" line="28">
 <kw name="Create New Order" owner="keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.862150" level="INFO">${payload} = {'cartId': 'ArVokgkfEt1kwWEeKUvPv', 'customerName': 'Test', 'comment': 'Sample payload to create new order'}</msg>
+<msg time="2025-02-18T14:40:05.318824" level="INFO">${payload} = {'cartId': 'bmyPRxl1W87U7C5PUXZo2', 'customerName': 'Test', 'comment': 'Sample payload to create new order'}</msg>
 <var>${payload}</var>
 <arg>cartId=${CART_ID}</arg>
 <arg>customerName=${CUSTOMER_NAME}</arg>
 <arg>comment=${COMMENT}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.862150" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.318824" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.862150" level="INFO">payload: {'cartId': 'ArVokgkfEt1kwWEeKUvPv', 'customerName': 'Test', 'comment': 'Sample payload to create new order'}</msg>
+<msg time="2025-02-18T14:40:05.319826" level="INFO">payload: {'cartId': 'bmyPRxl1W87U7C5PUXZo2', 'customerName': 'Test', 'comment': 'Sample payload to create new order'}</msg>
 <arg>payload: ${payload}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.862150" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.318824" elapsed="0.001002"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:19.862150" level="INFO">${headers} = {'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1'}</msg>
+<msg time="2025-02-18T14:40:05.320872" level="INFO">${headers} = {'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767'}</msg>
 <var>${headers}</var>
 <arg>Authorization=Bearer ${ACCESS_TOKEN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.862150" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.319826" elapsed="0.001046"/>
 </kw>
 <kw name="POST" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:20.772943" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/orders 
+<msg time="2025-02-18T14:40:05.821003" level="INFO">POST Request : url=https://simple-grocery-store-api.glitch.me/orders 
  path_url=/orders 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1', 'Content-Length': '108', 'Content-Type': 'application/json'} 
- body=b'{"cartId": "ArVokgkfEt1kwWEeKUvPv", "customerName": "Test", "comment": "Sample payload to create new order"}' 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767', 'Content-Length': '108', 'Content-Type': 'application/json'} 
+ body=b'{"cartId": "bmyPRxl1W87U7C5PUXZo2", "customerName": "Test", "comment": "Sample payload to create new order"}' 
  </msg>
-<msg time="2025-02-16T15:56:20.772943" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/orders 
+<msg time="2025-02-18T14:40:05.821003" level="INFO">POST Response : url=https://simple-grocery-store-api.glitch.me/orders 
  status=201, reason=Created 
- headers={'Connection': 'keep-alive', 'Content-Length': '50', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"32-dDcp4nOPrMmvUV+2W9yrQgmvQbc"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:20 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4750-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701579.273066,VS0,VE803'} 
- body={"created":true,"orderId":"tpIobDNRFW2StcSqJReR1"} 
+ headers={'Connection': 'keep-alive', 'Content-Length': '50', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"32-SywC7DGl2xhEaWlfquJJmA9cpgE"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:05 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4731-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869805.300271,VS0,VE475'} 
+ body={"created":true,"orderId":"64raKRAn_wl8_eTQ8GnE3"} 
  </msg>
-<msg time="2025-02-16T15:56:20.772943" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2025-02-18T14:40:05.821003" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/orders</arg>
 <arg>json=${payload}</arg>
 <arg>headers=${headers}</arg>
 <arg>expected_status=201</arg>
 <doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-02-16T15:56:19.862150" elapsed="0.910793"/>
+<status status="PASS" start="2025-02-18T14:40:05.320872" elapsed="0.500131"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:20.772943" level="INFO">${ORDER_ID} = tpIobDNRFW2StcSqJReR1</msg>
+<msg time="2025-02-18T14:40:05.822041" level="INFO">${ORDER_ID} = 64raKRAn_wl8_eTQ8GnE3</msg>
 <var>${ORDER_ID}</var>
 <arg>${response.json().get("orderId")}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.772943" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.822041" elapsed="0.000000"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-16T15:56:20.773945" level="INFO">Length is 21.</msg>
+<msg time="2025-02-18T14:40:05.823000" level="INFO">Length is 21.</msg>
 <arg>${ORDER_ID}</arg>
 <arg>Order creation failed!</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.772943" elapsed="0.001002"/>
+<status status="PASS" start="2025-02-18T14:40:05.823000" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:20.773945" level="INFO">${ORDER_ID} = tpIobDNRFW2StcSqJReR1</msg>
+<msg time="2025-02-18T14:40:05.823000" level="INFO">${ORDER_ID} = 64raKRAn_wl8_eTQ8GnE3</msg>
 <arg>${ORDER_ID}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.773945" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.823000" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:20.773945" level="INFO">Order ID: tpIobDNRFW2StcSqJReR1</msg>
+<msg time="2025-02-18T14:40:05.823000" level="INFO">Order ID: 64raKRAn_wl8_eTQ8GnE3</msg>
 <arg>Order ID: ${ORDER_ID}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.773945" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:05.823000" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:19.861154" elapsed="0.912791"/>
+<status status="PASS" start="2025-02-18T14:40:05.317820" elapsed="0.506180"/>
 </kw>
+<doc>Execute Create New Order test case</doc>
+<status status="PASS" start="2025-02-18T14:40:05.316819" elapsed="0.507181"/>
+</test>
+<test id="s1-t6" name="Get All Orders" line="32">
 <kw name="Get All Orders" owner="keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:20.774993" level="INFO">${headers} = {'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1'}</msg>
+<msg time="2025-02-18T14:40:05.829004" level="INFO">${headers} = {'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767'}</msg>
 <var>${headers}</var>
 <arg>Authorization=Bearer ${ACCESS_TOKEN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.773945" elapsed="0.001048"/>
+<status status="PASS" start="2025-02-18T14:40:05.828010" elapsed="0.000994"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:21.039965" level="INFO">GET Request : url=https://simple-grocery-store-api.glitch.me/orders 
+<msg time="2025-02-18T14:40:06.089634" level="INFO">GET Request : url=https://simple-grocery-store-api.glitch.me/orders 
  path_url=/orders 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1'} 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767'} 
  body=None 
  </msg>
-<msg time="2025-02-16T15:56:21.041069" level="INFO">GET Response : url=https://simple-grocery-store-api.glitch.me/orders 
+<msg time="2025-02-18T14:40:06.089634" level="INFO">GET Response : url=https://simple-grocery-store-api.glitch.me/orders 
  status=200, reason=OK 
- headers={'Connection': 'keep-alive', 'Content-Length': '196', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"c4-elYMUKH2vLtKwd3IN02sw6g6B0M"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:20 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4721-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701580.128781,VS0,VE224'} 
- body=[{"id":"tpIobDNRFW2StcSqJReR1","items":[{"id":912369375,"productId":4643,"quantity":10}],"customerName":"Test","created":"2025-02-16T10:26:19.455Z","comment":"Sample payload to create new order"}] 
+ headers={'Connection': 'keep-alive', 'Content-Length': '196', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"c4-D85Vopg80Y/hNhcPzwfIBB0HFmM"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:06 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4722-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869806.819283,VS0,VE221'} 
+ body=[{"id":"64raKRAn_wl8_eTQ8GnE3","items":[{"id":962615426,"productId":4643,"quantity":10}],"customerName":"Test","created":"2025-02-18T09:10:05.426Z","comment":"Sample payload to create new order"}] 
  </msg>
-<msg time="2025-02-16T15:56:21.041069" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-02-18T14:40:06.090634" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/orders</arg>
 <arg>headers=${headers}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2025-02-16T15:56:20.774993" elapsed="0.266076"/>
+<status status="PASS" start="2025-02-18T14:40:05.829004" elapsed="0.261630"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:21.042059" level="INFO">${ORDERS} = [{'id': 'tpIobDNRFW2StcSqJReR1', 'items': [{'id': 912369375, 'productId': 4643, 'quantity': 10}], 'customerName': 'Test', 'created': '2025-02-16T10:26:19.455Z', 'comment': 'Sample payload to create ne...</msg>
+<msg time="2025-02-18T14:40:06.092623" level="INFO">${ORDERS} = [{'id': '64raKRAn_wl8_eTQ8GnE3', 'items': [{'id': 962615426, 'productId': 4643, 'quantity': 10}], 'customerName': 'Test', 'created': '2025-02-18T09:10:05.426Z', 'comment': 'Sample payload to create ne...</msg>
 <var>${ORDERS}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.042059" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:06.091628" elapsed="0.000995"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-16T15:56:21.042967" level="INFO">Length is 1.</msg>
+<msg time="2025-02-18T14:40:06.092623" level="INFO">Length is 1.</msg>
 <arg>${ORDERS}</arg>
 <arg>No orders found!</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.042059" elapsed="0.000908"/>
+<status status="PASS" start="2025-02-18T14:40:06.092623" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:21.042967" level="INFO">Orders: [{'id': 'tpIobDNRFW2StcSqJReR1', 'items': [{'id': 912369375, 'productId': 4643, 'quantity': 10}], 'customerName': 'Test', 'created': '2025-02-16T10:26:19.455Z', 'comment': 'Sample payload to create new order'}]</msg>
+<msg time="2025-02-18T14:40:06.093522" level="INFO">Orders: [{'id': '64raKRAn_wl8_eTQ8GnE3', 'items': [{'id': 962615426, 'productId': 4643, 'quantity': 10}], 'customerName': 'Test', 'created': '2025-02-18T09:10:05.426Z', 'comment': 'Sample payload to create new order'}]</msg>
 <arg>Orders: ${ORDERS}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.042967" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:06.092623" elapsed="0.000899"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:20.773945" elapsed="0.269022"/>
+<status status="PASS" start="2025-02-18T14:40:05.827002" elapsed="0.266520"/>
 </kw>
+<doc>Execute Get All Orders test case</doc>
+<status status="PASS" start="2025-02-18T14:40:05.826002" elapsed="0.267520"/>
+</test>
+<test id="s1-t7" name="Delete Order" line="36">
 <kw name="Delete Order" owner="keywords">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-02-16T15:56:21.044017" level="INFO">${headers} = {'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1'}</msg>
+<msg time="2025-02-18T14:40:06.096525" level="INFO">${headers} = {'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767'}</msg>
 <var>${headers}</var>
 <arg>Authorization=Bearer ${ACCESS_TOKEN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.044017" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:06.095528" elapsed="0.000997"/>
 </kw>
 <kw name="DELETE" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:21.569255" level="INFO">DELETE Request : url=https://simple-grocery-store-api.glitch.me/orders/tpIobDNRFW2StcSqJReR1 
- path_url=/orders/tpIobDNRFW2StcSqJReR1 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 7db82b97bb77d227591a90c0602611d6f348b8545380da0bf1754ad35c027ed1', 'Content-Length': '0'} 
+<msg time="2025-02-18T14:40:06.517938" level="INFO">DELETE Request : url=https://simple-grocery-store-api.glitch.me/orders/64raKRAn_wl8_eTQ8GnE3 
+ path_url=/orders/64raKRAn_wl8_eTQ8GnE3 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 51cf18ddbc9651a85391b48dbcc6c7e9ab52fcff44fa22b5af6b3a13dd317767', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2025-02-16T15:56:21.569255" level="INFO">DELETE Response : url=https://simple-grocery-store-api.glitch.me/orders/tpIobDNRFW2StcSqJReR1 
+<msg time="2025-02-18T14:40:06.517938" level="INFO">DELETE Response : url=https://simple-grocery-store-api.glitch.me/orders/64raKRAn_wl8_eTQ8GnE3 
  status=204, reason=No Content 
- headers={'Connection': 'keep-alive', 'x-powered-by': 'Express', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:20 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4736-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701580.439879,VS0,VE433'} 
+ headers={'Connection': 'keep-alive', 'x-powered-by': 'Express', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:06 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4734-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869806.079930,VS0,VE388'} 
  body=None 
  </msg>
-<msg time="2025-02-16T15:56:21.569255" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<msg time="2025-02-18T14:40:06.517938" level="INFO">${response} = &lt;Response [204]&gt;</msg>
 <var>${response}</var>
 <arg>${BASE_URL}/orders/${ORDER_ID}</arg>
 <arg>headers=${headers}</arg>
 <arg>expected_status=204</arg>
 <doc>Sends a DELETE request.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.044017" elapsed="0.525238"/>
+<status status="PASS" start="2025-02-18T14:40:06.096525" elapsed="0.421413"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:21.570198" level="INFO">Order Deleted Successfully</msg>
+<msg time="2025-02-18T14:40:06.518983" level="INFO">Order Deleted Successfully</msg>
 <arg>Order Deleted Successfully</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.570198" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:06.517938" elapsed="0.001045"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:21.044017" elapsed="0.526181"/>
+<status status="PASS" start="2025-02-18T14:40:06.095528" elapsed="0.423455"/>
 </kw>
+<doc>Execute Delete Order test case</doc>
+<status status="PASS" start="2025-02-18T14:40:06.095528" elapsed="0.423455"/>
+</test>
+<test id="s1-t8" name="Check Grocery Store API Status" line="40">
 <kw name="Check Grocery Store API Status" owner="keywords">
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2025-02-16T15:56:22.067077" level="INFO">GET Request : url=https://simple-grocery-store-api.glitch.me/status 
+<msg time="2025-02-18T14:40:07.003191" level="INFO">GET Request : url=https://simple-grocery-store-api.glitch.me/status 
  path_url=/status 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-02-16T15:56:22.067077" level="INFO">GET Response : url=https://simple-grocery-store-api.glitch.me/status 
+<msg time="2025-02-18T14:40:07.003191" level="INFO">GET Response : url=https://simple-grocery-store-api.glitch.me/status 
  status=200, reason=OK 
- headers={'Connection': 'keep-alive', 'Content-Length': '15', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"f-RQ8OySFd+KR+AvtJ7qImjtT0D/0"', 'Accept-Ranges': 'bytes', 'Date': 'Sun, 16 Feb 2025 10:26:21 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4721-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739701581.973125,VS0,VE403'} 
+ headers={'Connection': 'keep-alive', 'Content-Length': '15', 'Content-Type': 'application/json; charset=utf-8', 'x-powered-by': 'Express', 'etag': 'W/"f-RQ8OySFd+KR+AvtJ7qImjtT0D/0"', 'Accept-Ranges': 'bytes', 'Date': 'Tue, 18 Feb 2025 09:10:06 GMT', 'Via': '1.1 varnish', 'X-Served-By': 'cache-bom4733-BOM', 'X-Cache': 'MISS', 'X-Cache-Hits': '0', 'X-Timer': 'S1739869806.499713,VS0,VE458'} 
  body={"status":"UP"} 
  </msg>
-<msg time="2025-02-16T15:56:22.068077" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-02-18T14:40:07.003191" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${STATUS_API}</arg>
 <arg>expected_status=200</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2025-02-16T15:56:21.571099" elapsed="0.496978"/>
+<status status="PASS" start="2025-02-18T14:40:06.520943" elapsed="0.482248"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-02-16T15:56:22.068077" level="INFO">{"status":"UP"}</msg>
+<msg time="2025-02-18T14:40:07.004194" level="INFO">{"status":"UP"}</msg>
 <arg>${response.text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-16T15:56:22.068077" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:07.004194" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-16T15:56:22.069077" level="INFO">${json_response} = {'status': 'UP'}</msg>
+<msg time="2025-02-18T14:40:07.005196" level="INFO">${json_response} = {'status': 'UP'}</msg>
 <var>${json_response}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-16T15:56:22.068077" elapsed="0.001000"/>
+<status status="PASS" start="2025-02-18T14:40:07.004194" elapsed="0.001002"/>
 </kw>
 <kw name="Dictionary Should Contain Key" owner="Collections">
 <arg>${json_response}</arg>
 <arg>status</arg>
 <doc>Fails if ``key`` is not found from ``dictionary``.</doc>
-<status status="PASS" start="2025-02-16T15:56:22.069077" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:07.005196" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${json_response['status']}</arg>
 <arg>UP</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-02-16T15:56:22.069077" elapsed="0.000000"/>
+<status status="PASS" start="2025-02-18T14:40:07.005196" elapsed="0.000997"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:21.570198" elapsed="0.498879"/>
+<status status="PASS" start="2025-02-18T14:40:06.519939" elapsed="0.486254"/>
 </kw>
-<status status="PASS" start="2025-02-16T15:56:18.392589" elapsed="3.676488"/>
+<doc>Execute Check Grocery Store API Status test case</doc>
+<status status="PASS" start="2025-02-18T14:40:06.519939" elapsed="0.486254"/>
 </test>
-<status status="PASS" start="2025-02-16T15:56:17.637948" elapsed="4.432126"/>
+<status status="PASS" start="2025-02-18T14:40:02.872602" elapsed="4.134663"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Grocery" id="s1" pass="1" fail="0" skip="0">Grocery</stat>
+<stat name="Grocery All" id="s1" pass="8" fail="0" skip="0">Grocery All</stat>
 </suite>
 </statistics>
 <errors>
